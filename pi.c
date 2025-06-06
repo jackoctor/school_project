@@ -1,10 +1,9 @@
 #include<stdio.h>
 #include<wiringPi.h>
 
-#define SENSOR_PIN //GPIOピンの番号を入れる
-#define LIGHT_PIN //GPIOピンの番号を入れる
+#define SENSOR_PIN
+#define LIGHT_PIN
 
-//起動確認処理
 void check(int times) {
     delay(1000);
     for (int i = 0; i < 3; i++){
@@ -30,9 +29,9 @@ int main(void) {
 
     while (1) {
         if (digitalRead(SENSOR_PIN) == HIGH) {
-            digitalWrite(LIGHT_PIN, HIGH); //ライト点灯
+            digitalWrite(LIGHT_PIN, HIGH);
         } else {
-            digitalWrite(LIGHT_PIN, LOW); //ライト消灯
+            digitalWrite(LIGHT_PIN, LOW);
         }
         delay(100);
     }
