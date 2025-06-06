@@ -17,6 +17,11 @@ void check(int times) {
 }
 
 int main(void) {
+
+    if(wiringPiSetupGpio() == -1){
+        return 1;
+    }
+    
     wiringPiSetupGpio ();
     pinMode (SENSOR_PIN, INPUT);
     pinMode (LIGHT_PIN, OUTPUT);
